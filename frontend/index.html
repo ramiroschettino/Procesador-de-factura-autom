@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Facturas IA - ISMS</title>
+    <meta name="description" content="Sistema inteligente de procesamiento de facturas con IA">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">🤖</div>
+                    <div>
+                        <h1>Facturas IA</h1>
+                        <p class="subtitle">Sistema Inteligente de Procesamiento</p>
+                    </div>
+                </div>
+                <div class="status-indicator">
+                    <span class="status-dot" id="statusDot"></span>
+                    <span id="statusText">Conectando...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" data-tab="factura">
+                    <i class="fas fa-file-invoice"></i> Procesar Factura
+                </button>
+                <button class="tab" data-tab="oc">
+                    <i class="fas fa-search"></i> Buscar Proveedor (OC)
+                </button>
+                <button class="tab" data-tab="historial">
+                    <i class="fas fa-history"></i> Historial
+                </button>
+            </div>
+
+            <!-- Tab: Procesar Factura -->
+            <section class="tab-content active" id="tab-factura">
+                <div class="card">
+                    <h2><i class="fas fa-file-invoice-dollar"></i> Procesar Factura</h2>
+                    <p class="card-description">Sube la factura del proveedor. El sistema extraerá los datos, buscará la
+                        OC en la base de datos y generará el asiento contable automáticamente.</p>
+
+                    <div class="upload-area" id="invoiceUploadArea">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>Arrastra la factura aquí</h3>
+                        <p>o haz clic para seleccionar</p>
+                        <p class="file-types">PDF, PNG, JPG (máx. 16MB)</p>
+                        <input type="file" id="invoiceInput" accept=".pdf,.png,.jpg,.jpeg" hidden>
+                    </div>
+
+                    <div id="invoiceFileItem" class="file-item" style="display: none;">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="filename">factura.pdf</span>
+                        <i class="fas fa-times remove-file" onclick="removeFile('invoice')"></i>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="btnProcessInvoice" disabled>
+                            <i class="fas fa-cogs"></i> Procesar Completo
+                        </button>
+                        <button class="btn btn-secondary" id="btnExtractOnly" disabled>
+                            <i class="fas fa-eye"></i> Solo Extraer Datos
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Logs en tiempo real -->
+                <div class="card" id="logsCard" style="display: none;">
+                    <h3><i class="fas fa-terminal"></i> Logs del Proceso</h3>
+                    <div class="logs-container" id="logsContainer"></div>
+                </div>
+
+                <!-- Resultados -->
+                <div class="card" id="resultsCard" style="display: none;">
+                    <h3><i class="fas fa-check-circle"></i> Resultados</h3>
+                    <div id="resultDetails"></div>
+                </div>
+            </section>
+
+            <!-- Tab: Buscar Proveedor (OC) -->
+            <section class="tab-content" id="tab-oc">
+                <div class="card">
+                    <h2><i class="fas fa-search"></i> Búsqueda Automática de Proveedor</h2>
+                    <p class="card-description">Sube la OC del proveedor. El sistema extraerá el nombre y CUIT, buscará
+                        en la base de datos y mostrará las OCs activas.</p>
+
+                    <div class="upload-area" id="ocUploadArea">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>Arrastra la OC del proveedor aquí</h3>
+                        <p>o haz clic para seleccionar</p>
+                        <p class="file-types">PDF, PNG, JPG (máx. 16MB)</p>
+                        <input type="file" id="ocInput" accept=".pdf,.png,.jpg,.jpeg" hidden>
+                    </div>
+
+                    <div id="ocFileItem" class="file-item" style="display: none;">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="filename">oc_proveedor.pdf</span>
+                        <i class="fas fa-times remove-file" onclick="removeFile('oc')"></i>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="btnSearchProvider" disabled>
+                            <i class="fas fa-search"></i> Buscar Proveedor
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Logs OC -->
+                <div class="card" id="logsOcCard" style="display: none;">
+                    <h3><i class="fas fa-terminal"></i> Logs de Búsqueda</h3>
+                    <div class="logs-container" id="logsOcContainer"></div>
+                </div>
+
+                <!-- Resultados Proveedor -->
+                <div class="card" id="providerResultsCard" style="display: none;">
+                    <h3><i class="fas fa-users"></i> Proveedores Encontrados</h3>
+                    <div id="providerResults"></div>
+                </div>
+            </section>
+
+            <!-- Tab: Historial -->
+            <section class="tab-content" id="tab-historial">
+                <div class="card">
+                    <div class="section-header">
+                        <h2><i class="fas fa-history"></i> Historial de Procesamiento</h2>
+                        <button class="btn btn-small" id="btnRefreshHistory">
+                            <i class="fas fa-sync-alt"></i> Actualizar
+                        </button>
+                    </div>
+                    <div class="history-list" id="historyList">
+                        <p class="empty-state">No hay facturas procesadas aún</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Sistema de Facturas IA - Powered by Google Gemini 🚀</p>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p id="loadingText">Procesando...</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

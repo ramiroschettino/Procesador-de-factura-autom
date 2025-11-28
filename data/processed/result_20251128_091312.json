@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "extraction": {
+    "cabecera": {
+      "proveedor": {
+        "nombre": "Telefónica Móviles Argentina S.A.",
+        "cuit": "30678814357",
+        "codigo_sistema": "52584"
+      },
+      "factura": {
+        "tipo_comprobante": "FACTURA A",
+        "punto_emision": "3108",
+        "numero_comprobante": "00125982",
+        "fecha_emision": "2025-10-28",
+        "fecha_vencimiento": "2025-11-09",
+        "moneda": "ARS",
+        "cotizacion": 1.0,
+        "importe_total": 55937.07,
+        "importe_neto_gravado": 43735.0,
+        "importe_iva": 0.0,
+        "importe_no_gravado": 0.0,
+        "importe_exento": 0.0
+      },
+      "orden_compra_vinculada": {
+        "numero": null,
+        "encontrada_en_factura": false
+      },
+      "impuestos": [
+        {
+          "tipo": "PERCEP_IIBB",
+          "monto": 11808.45
+        }
+      ],
+      "observaciones": "Incluye impuesto adicional de 0.90% (393.62) no clasificado en schema, donde 43735.00 + 393.62 + 11808.45 = 55937.07 (Total a Pagar). La línea 'IVA 27,00% TOTAL 12202.07' es la suma de 393.62 y 11808.45."
+    },
+    "items": [
+      {
+        "linea": 1,
+        "descripcion": "PLANES Y SERVICIOS 28/09 al 27/10",
+        "cantidad": 1.0,
+        "precio_unitario": 43735.0,
+        "alicuota_iva": 0.0,
+        "importe_neto": 43735.0,
+        "importe_iva": 0.0,
+        "total_linea": 43735.0
+      }
+    ]
+  },
+  "reconciliation": null,
+  "database": {
+    "success": true,
+    "message": "Factura procesada exitosamente. Archivo: 347548"
+  },
+  "errors": []
+}

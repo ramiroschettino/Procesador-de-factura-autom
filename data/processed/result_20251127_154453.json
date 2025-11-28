@@ -1,0 +1,9 @@
+{
+  "success": false,
+  "extraction": null,
+  "reconciliation": null,
+  "database": null,
+  "errors": [
+    "Error en extracción de datos"
+  ]
+}

@@ -1,0 +1,34 @@
+# Excluir carpetas específicas
+../tag/
+../trunk/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de configuración sensibles
+.env
+
+# Logs
+*.log
+
+# Base de datos local
+*.db
+*.sqlite
+
+# Archivos temporales
+*.tmp
+*.bak
+uploads/

@@ -1,0 +1,63 @@
+{
+  "success": false,
+  "extraction": {
+    "cabecera": {
+      "proveedor": {
+        "nombre": "SPATARO S.A.",
+        "cuit": "33611492419",
+        "codigo_sistema": null
+      },
+      "factura": {
+        "tipo_comprobante": "FACTURA A",
+        "punto_emision": "0018",
+        "numero_comprobante": "00008327",
+        "fecha_emision": "2025-11-25",
+        "fecha_vencimiento": "2025-12-25",
+        "moneda": "ARS",
+        "cotizacion": 1.0,
+        "importe_total": 156087.7,
+        "importe_neto_gravado": 128998.1,
+        "importe_iva": 27089.6,
+        "importe_no_gravado": 0.0,
+        "importe_exento": 0.0
+      },
+      "orden_compra_vinculada": {
+        "numero": "RSM-R-2025-0019456",
+        "encontrada_en_factura": true
+      },
+      "impuestos": [],
+      "observaciones": "SEGUN ORDEN NR50 111 668"
+    },
+    "items": [
+      {
+        "linea": 1,
+        "descripcion": "SIKAFLEX 1A PLUS GRIS X 600CC",
+        "cantidad": 2.0,
+        "precio_unitario": 54250.35,
+        "alicuota_iva": 21.0,
+        "importe_neto": 108500.7,
+        "importe_iva": 22785.147,
+        "total_linea": 108500.7
+      },
+      {
+        "linea": 2,
+        "descripcion": "ESPUMA POLIURETANO 500 ML LABOR",
+        "cantidad": 2.0,
+        "precio_unitario": 10248.7,
+        "alicuota_iva": 21.0,
+        "importe_neto": 20497.4,
+        "importe_iva": 4304.454,
+        "total_linea": 20497.4
+      }
+    ]
+  },
+  "reconciliation": null,
+  "database": {
+    "success": false,
+    "message": "Proveedor no encontrado - CUIT: 33611492419, Nombre: SPATARO S.A."
+  },
+  "errors": [
+    "OC RSM-R-2025-0019456 no encontrada en BD",
+    "Proveedor no encontrado - CUIT: 33611492419, Nombre: SPATARO S.A."
+  ]
+}

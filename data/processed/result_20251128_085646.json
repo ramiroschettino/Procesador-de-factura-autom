@@ -1,0 +1,57 @@
+{
+  "success": false,
+  "extraction": {
+    "cabecera": {
+      "proveedor": {
+        "nombre": "Telefónica Móviles Argentina S.A.",
+        "cuit": "30678814357",
+        "codigo_sistema": "52584"
+      },
+      "factura": {
+        "tipo_comprobante": "FACTURA A",
+        "punto_emision": "3108",
+        "numero_comprobante": "00125962",
+        "fecha_emision": "2025-10-28",
+        "fecha_vencimiento": "2025-11-09",
+        "moneda": "ARS",
+        "cotizacion": 1.0,
+        "importe_total": 55937.07,
+        "importe_neto_gravado": 43735.0,
+        "importe_iva": 11808.45,
+        "importe_no_gravado": 0.0,
+        "importe_exento": 0.0
+      },
+      "orden_compra_vinculada": {
+        "numero": null,
+        "encontrada_en_factura": false
+      },
+      "impuestos": [
+        {
+          "tipo": "PERCEP_IIBB",
+          "monto": 393.62
+        }
+      ],
+      "observaciones": "Te informamos que a partir del 01/11/25 el precio de lista de los servicios de Telefonía Fija, Pública, Semipública, Banda Ancha,TV,ATD,ATIP,0800,0810, líneas directas analógicas, digitales y cargos de rehabilitación de llamadas internacionales aumentarán hasta 3,3%. Si tienes promociones acordadas se mantienen y si tienes una promoción vigente seguirás disfrutándola sobre el nuevo valor.Más información en https://mov.is/legalok o al WhatsApp 1122615555 de 9/18 hs."
+    },
+    "items": [
+      {
+        "linea": 1,
+        "descripcion": "Abono Servicio",
+        "cantidad": 1.0,
+        "precio_unitario": 43735.0,
+        "alicuota_iva": 27.0,
+        "importe_neto": 43735.0,
+        "importe_iva": 11808.45,
+        "total_linea": 55543.45
+      }
+    ]
+  },
+  "reconciliation": null,
+  "database": {
+    "success": false,
+    "message": "('22007', '[22007] [Microsoft][ODBC SQL Server Driver][SQL Server]La conversión del tipo de datos nvarchar en datetime produjo un valor fuera de intervalo. (242) (SQLExecDirectW); [22007] [Microsoft][ODBC SQL Server Driver][SQL Server]Se terminó la instrucción. (3621)')"
+  },
+  "errors": [
+    "('22007', '[22007] [Microsoft][ODBC SQL Server Driver][SQL Server]La conversión del tipo de datos nvarchar en datetime produjo un valor fuera de intervalo. (242) (SQLExecDirectW); [22007] [Microsoft][ODBC SQL Server Driver][SQL Server]Se terminó la instrucción. (3621)')"
+  ]
+}

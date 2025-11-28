@@ -1,0 +1,95 @@
+{
+  "success": false,
+  "extraction": {
+    "cabecera": {
+      "proveedor": {
+        "nombre": "ELECTRONICA DEL SUR S.A.",
+        "cuit": "30712345678",
+        "codigo_sistema": null
+      },
+      "factura": {
+        "tipo_comprobante": "FACTURA A",
+        "punto_emision": "00003",
+        "numero_comprobante": "00004587",
+        "fecha_emision": "2024-11-15",
+        "fecha_vencimiento": "2024-11-30",
+        "moneda": "ARS",
+        "cotizacion": 1.0,
+        "importe_total": 7311425.0,
+        "importe_neto_gravado": 6042500.0,
+        "importe_iva": 1268925.0,
+        "importe_no_gravado": 0.0,
+        "importe_exento": 0.0
+      },
+      "orden_compra_vinculada": {
+        "numero": "2024-11-089",
+        "encontrada_en_factura": true
+      },
+      "impuestos": [
+        {
+          "tipo": "PERCEP_IIBB",
+          "monto": 0.0
+        }
+      ],
+      "observaciones": "Factura correspondiente a pedido Nº 2024-11-089. Los productos cuentan con garantía oficial de 12 meses. Envío a cargo del comprador según condiciones pactadas."
+    },
+    "items": [
+      {
+        "linea": 1,
+        "descripcion": "Notebook Lenovo ThinkPad E14",
+        "cantidad": 5.0,
+        "precio_unitario": 485000.0,
+        "alicuota_iva": 21.0,
+        "importe_neto": 2425000.0,
+        "importe_iva": 509250.0,
+        "total_linea": 2934250.0
+      },
+      {
+        "linea": 2,
+        "descripcion": "Monitor LED 24\" Samsung Full HD",
+        "cantidad": 10.0,
+        "precio_unitario": 125000.0,
+        "alicuota_iva": 21.0,
+        "importe_neto": 1187500.0,
+        "importe_iva": 249375.0,
+        "total_linea": 1436875.0
+      },
+      {
+        "linea": 3,
+        "descripcion": "Mouse Inalámbrico Logitech M280",
+        "cantidad": 25.0,
+        "precio_unitario": 18500.0,
+        "alicuota_iva": 21.0,
+        "importe_neto": 462500.0,
+        "importe_iva": 97125.0,
+        "total_linea": 559625.0
+      },
+      {
+        "linea": 4,
+        "descripcion": "Teclado Mecánico RGB Redragon",
+        "cantidad": 15.0,
+        "precio_unitario": 45000.0,
+        "alicuota_iva": 21.0,
+        "importe_neto": 607500.0,
+        "importe_iva": 127575.0,
+        "total_linea": 735075.0
+      },
+      {
+        "linea": 5,
+        "descripcion": "Disco SSD 1TB Kingston NV2",
+        "cantidad": 20.0,
+        "precio_unitario": 68000.0,
+        "alicuota_iva": 21.0,
+        "importe_neto": 1360000.0,
+        "importe_iva": 285600.0,
+        "total_linea": 1645600.0
+      }
+    ]
+  },
+  "reconciliation": null,
+  "database": null,
+  "errors": [
+    "OC 2024-11-089 no encontrada en BD",
+    "('25000', '[25000] [Microsoft][ODBC SQL Server Driver][SQL Server]La solicitud ROLLBACK TRANSACTION no tiene la correspondiente BEGIN TRANSACTION. (3903) (SQLExecDirectW)')"
+  ]
+}

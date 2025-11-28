@@ -106,7 +106,7 @@ start http://localhost:5000
 
 ```env
 # API Key de Gemini
-GEMINI_API_KEY=AIzaSyBtjRLCMDPqQIWGtQoNGqJwjgBvtNxgPvY
+GEMINI_API_KEY=tu_clave_aqui
 
 # Base de Datos
 DB_SERVER=10.1.1.17
